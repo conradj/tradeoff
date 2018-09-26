@@ -6,6 +6,7 @@ import Map from './modules/map/Map'
 import Main from './modules/layout/Main'
 import Sidebar from './modules/layout/Sidebar'
 import RouteResultsContext from './RouteResultsContext'
+import { timeInsights } from './services/timeInsightService'
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +44,6 @@ class App extends Component {
         .reduce((acc, curr) => [...acc, ...curr], [])
         .filter(x => x)
     }
-
     this.toggleComparator = comparator => {
       const exists = this.state.comparators.find(
         comparatorItem => comparatorItem.mode === comparator.mode
