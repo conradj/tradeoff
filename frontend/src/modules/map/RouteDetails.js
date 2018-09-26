@@ -2,9 +2,7 @@ import React from 'react'
 import './route-details.css'
 
 class RouteDetails extends React.Component {
-
   handleSubmit(e) {
-
     e.preventDefault()
     console.log(this.origin.value)
     const origin = encodeURI(this.origin.value)
@@ -12,7 +10,6 @@ class RouteDetails extends React.Component {
 
     const modes = ['driving', 'walking', 'transit', 'bicycling']
     modes.map(async mode => {
-
       const url = `http://localhost:3000/directions?origin=${origin}&destination=${destination}&mode=${mode}`
 
       const response = await fetch(url)
@@ -21,19 +18,27 @@ class RouteDetails extends React.Component {
   }
 
   render() {
-    return <form onSubmit={(e) => this.handleSubmit(e)}>
+    return (
+      <form onSubmit={e => this.handleSubmit(e)}>
         <h1>Where would you like to go?</h1>
         <label htmlFor="origin">Origin</label>
-        <input id="origin" ref={origin=>this.origin=origin} type='text' defaultValue='ba2 3dq'></input>
+        <input
+          id="origin"
+          ref={origin => (this.origin = origin)}
+          type="text"
+          defaultValue="ba2 3dq"
+        />
         <label htmlFor="destination">Destination</label>
-        <input id="destination" ref={destination=>this.destination=destination} type='text' defaultValue='ba1 2el'></input>
+        <input
+          id="destination"
+          ref={destination => (this.destination = destination)}
+          type="text"
+          defaultValue="ba1 2el"
+        />
         <button>Go</button>
       </form>
-
+    )
   }
-
 }
-
-
 
 export default RouteDetails

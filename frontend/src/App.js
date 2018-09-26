@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import Map from './modules/map/Map'
 import Header from './modules/layout/Header'
 import Sidebar from './modules/layout/Sidebar'
@@ -12,8 +12,8 @@ class App extends Component {
         <Sidebar />
         <Map />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

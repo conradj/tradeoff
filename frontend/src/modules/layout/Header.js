@@ -13,9 +13,10 @@ const StyledHeader = styled.header`
   color: ${color.text};
 `
 
-const Header = () =>
+const Header = () => (
   <StyledHeader>
     <RouteDetails />
   </StyledHeader>
+)
 
 export default Header

@@ -33,9 +33,10 @@ const StyledSidebar = styled.section`
   top: calc(${size.headerHeight} + ${size.padding} + ${size.padding});
 `
 
-const Sidebar = () =>
+const Sidebar = () => (
   <StyledSidebar>
     <RouteResultList results={results} />
   </StyledSidebar>
+)
 
 export default Sidebar
